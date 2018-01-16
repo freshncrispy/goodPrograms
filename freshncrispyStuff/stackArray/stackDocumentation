@@ -1,0 +1,12 @@
+This is the offical documentation to freshncrispy's stack.cpp program.
+This is will explain variables and stuff.
+
+CLASS mystack:
+	Variables:
+		array:	This is the integer array used to store numbers on the stack.
+		size: 	This integer is manipulated to add or remove numbers on the stack. It could also be read as "Current Size" since it's value is the current size of the stack.
+	Functions:
+		mystack(): 			Constructor for mystack. Sets the initial size of the stack to 0.
+		void push(int num): Recives an integer and adds it to the end of the stack.
+		void pop():			Displays the last integer placed on the stack. Also removes the number from the stack.
+		void showStack():	Displays the current size of the stack, the maximum size of the stack, and the integers currently placed on the stack.
