@@ -1,14 +1,14 @@
 #include <iostream>
 using namespace std;
 
-const int ARRAY_SIZE(10);
+const int MAX_ARRAY_SIZE(7);
 
 class mystack
 {
-	int array[ARRAY_SIZE];
+	int array[MAX_ARRAY_SIZE];
 	int *ptr, size;
 public:
-	mystack() {ptr = array[0]; size = 0;}
+	mystack() {ptr = array; size = 0;}
 	void push(int num);
 	void pop();
 	void showStack();
@@ -16,23 +16,71 @@ public:
 
 void mystack::push(int num)
 {
-	if (size >= ARRAY_SIZE - 1)
-		cout << "No more memory on the stack!\n";
+	if (size >= MAX_ARRAY_SIZE)
+		cout << "ERROR: No more memory on the stack!\n";
 	else
 	{
-		*ptr[size] = num;
+		array[size] = num;
 		size++;
 	}
 }
 
-void mystack::pop();
+void mystack::pop()
 {
-	
+	if(size <= 0)
+		cout << "ERROR: No more stack to pop!\n";
+	else
+	{
+		size--;
+		cout << array[size] << endl;
+	}
 	 
+}
+
+void mystack::showStack()
+{
+	cout << "------\n";
+	cout << "STACK OCCUPANCY: " << size << "/" << MAX_ARRAY_SIZE << "\n";
+	cout << "STACK: ";
+	for (int i = 0; i < size; i++)
+	{
+		cout << array[i] << " ";
+	}
+	cout << "\n------\n";
+
+
 }
 
 int main()
 {
-	cout << ARRAY_SIZE << endl;
+	mystack goodstack;
+	char selection(0);
+	int number(0);
+	do
+	{
+		cout << "Type (p) to push a number to the stack.\nType (t) to pop the stack.\nType (s) to show the stack.\n (q) to quit.\n";
+		cin >> selection;
+		switch(selection)
+		{
+			case 'p':
+				cout << "Enter a number.\n";
+				cin >> number;
+				goodstack.push(number);
+				break;
+			case 't':
+				goodstack.pop();
+				break;
+			case 's':
+				goodstack.showStack();
+				break;
+			case 'q':
+				selection = 'q';
+				break;
+			default:
+				cout << "Invalid choice. Try again.\n";
+		}
+
+	}while(selection != 'q');
+	
 	return 0;
 }
