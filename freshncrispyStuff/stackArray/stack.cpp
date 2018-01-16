@@ -6,9 +6,9 @@ const int MAX_ARRAY_SIZE(7);
 class mystack
 {
 	int array[MAX_ARRAY_SIZE];
-	int *ptr, size;
+	int size;
 public:
-	mystack() {ptr = array; size = 0;}
+	mystack() {size = 0;}
 	void push(int num);
 	void pop();
 	void showStack();
@@ -33,8 +33,7 @@ void mystack::pop()
 	{
 		size--;
 		cout << array[size] << endl;
-	}
-	 
+	} 
 }
 
 void mystack::showStack()
@@ -47,8 +46,6 @@ void mystack::showStack()
 		cout << array[i] << " ";
 	}
 	cout << "\n------\n";
-
-
 }
 
 int main()
@@ -79,7 +76,6 @@ int main()
 			default:
 				cout << "Invalid choice. Try again.\n";
 		}
-
 	}while(selection != 'q');
 	
 	return 0;
