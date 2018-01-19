@@ -48,6 +48,7 @@ void fbbpp::getNumList()
 
 void fbbpp::fizzBuzz()
 {
+	cout << "-----------------\n";
 	cout << "Fizz = " << arrayNums[0]
 		<< "\nBuzz = " << arrayNums[1]
 		<< "\nBang = " << arrayNums[2]
