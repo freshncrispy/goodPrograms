@@ -1,0 +1,6 @@
+user can input how many numbers they want to "fizzBuzz".
+user can input how many numbers activate a "fizzBuzzBangPopPow"
+user can input how many of "Fizz buzz bang pop pow" they want.
+
+program will sort the inputed numbers activating a "FizzBuzz" in acsending order.
+program will "FizzBuzz" using switch statements in ascending order of numbers.
